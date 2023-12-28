@@ -6,4 +6,3 @@ people = int(input("How many people to split the bill? "))
 calc = total / people * (1 + (percent / 100))
 
 print(f"Each person should pay: ${round(calc, 2)}")
-

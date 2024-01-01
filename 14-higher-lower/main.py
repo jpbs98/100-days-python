@@ -11,7 +11,6 @@ def main():
     print(logo)
 
     while True:
-
         print(f"Compare A: {object_a['name']}, a {object_a['description']},"
               f" from {object_a['country']}.")
         print(vs)
@@ -29,7 +28,6 @@ def main():
             score += 1
             object_a = answer[1]
             object_b = random.choice(data)
-
 
         os.system('cls' if os.name == 'nt' else 'clear')
         print(logo)

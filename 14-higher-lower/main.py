@@ -14,10 +14,10 @@ def main():
         print(f"Compare A: {object_a['name']}, a {object_a['description']},"
               f" from {object_a['country']}.")
         print(vs)
-        print(f"Compare B: {object_b['name']}, a {object_b['description']},"
+        print(f"Against B: {object_b['name']}, a {object_b['description']},"
               f" from {object_b['country']}.")
 
-        guess = input("Who has more followers? Type 'A' or 'B': ")
+        guess = input("Who has more followers? Type 'A' or 'B': ").upper()
         answer = higher_follower_count(object_a, object_b)
 
         if guess != answer[0]:

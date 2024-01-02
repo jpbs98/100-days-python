@@ -17,7 +17,7 @@ def divide(n1, n2):
     return n1 / n2
 
 
-operations = {'+': add, '-': subtract, '*': multiply, '/': divide}
+operations = {"+": add, "-": subtract, "*": multiply, "/": divide}
 
 
 def calculator():
@@ -34,8 +34,10 @@ def calculator():
         answer = calc_func(num1, num2)
         print(f"{num1} {op_symbol} {num2} = {answer}")
 
-        cnt_calc = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: ")
-        if cnt_calc == 'y':
+        cnt_calc = input(
+            f"Type 'y' to continue calculating with {answer}, or type 'n' to start a new calculation: "
+        )
+        if cnt_calc == "y":
             num1 = answer
         else:
             calculator()

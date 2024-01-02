@@ -58,7 +58,7 @@ def play_game():
             game_over = True
         else:
             wants_card = input("Type 'y' to get another card, type 'n' to pass: ")
-            if wants_card == 'y':
+            if wants_card == "y":
                 user_cards.append(deal_card())
             else:
                 game_over = True

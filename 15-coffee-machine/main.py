@@ -89,7 +89,7 @@ def main():
         value_inserted = process_coins()
         cost = MENU[order]["cost"]
         if not value_inserted >= cost:
-            print(f"Sorry, that's not enough money. Money refunded.")
+            print("Sorry, that's not enough money. Money refunded.")
             continue
 
         if value_inserted == cost:

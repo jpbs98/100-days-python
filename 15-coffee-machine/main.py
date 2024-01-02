@@ -21,22 +21,12 @@ MENU = {
             "coffee": 24,
         },
         "cost": 3.0,
-    }
+    },
 }
 
-RESOURCES = {
-    "water": 300,
-    "milk": 200,
-    "coffee": 100,
-    "money": 0
-}
+RESOURCES = {"water": 300, "milk": 200, "coffee": 100, "money": 0}
 
-COIN_VALUE = {
-    "quarter": 0.25,
-    "dime": 0.1,
-    "nickel": 0.05,
-    "penny": 0.01
-}
+COIN_VALUE = {"quarter": 0.25, "dime": 0.1, "nickel": 0.05, "penny": 0.01}
 
 
 def report():
@@ -62,8 +52,12 @@ def process_coins():
     nickels = float(input("how many nickels?: "))
     pennies = float(input("how many pennies?: "))
 
-    return COIN_VALUE["quarter"] * quarters + COIN_VALUE["dime"] * dimes + COIN_VALUE["nickel"] * \
-        nickels + COIN_VALUE["penny"] * pennies
+    return (
+        COIN_VALUE["quarter"] * quarters
+        + COIN_VALUE["dime"] * dimes
+        + COIN_VALUE["nickel"] * nickels
+        + COIN_VALUE["penny"] * pennies
+    )
 
 
 def process_order(drink):
@@ -93,7 +87,7 @@ def main():
             continue
 
         if value_inserted == cost:
-            RESOURCES["money"] += value_inserted
+            RESOURCES["money"] += cost
         else:
             change = value_inserted - cost
             RESOURCES["money"] += cost

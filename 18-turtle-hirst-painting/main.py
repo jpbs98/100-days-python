@@ -29,7 +29,6 @@ for _ in range(10):
     t.goto(START_X, START_Y)
     for _ in range(10):
         t.dot(20, random.choice(rgb_codes))
-        t.penup()
         t.fd(50)
     START_Y += 50
 

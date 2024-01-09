@@ -6,12 +6,8 @@ import pyperclip
 
 def gen_pw():
     """
-    Generate a random password consisting of letters, numbers, and symbols.
-
-    Returns
-    -------
-    str
-        The generated password.
+    Generate a random password consisting of letters, symbols, and numbers.
+    The password is inserted into the password_gen Text widget and copied to the clipboard.
     """
     letters = string.ascii_letters
     numbers = string.digits

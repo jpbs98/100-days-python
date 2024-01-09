@@ -5,6 +5,14 @@ import pyperclip
 
 
 def gen_pw():
+    """
+    Generate a random password consisting of letters, numbers, and symbols.
+
+    Returns
+    -------
+    str
+        The generated password.
+    """
     letters = string.ascii_letters
     numbers = string.digits
     symbols = ["!", "#", "$", "%", "&", "(", ")", "*", "+"]

@@ -1,5 +1,6 @@
 with open("./Input/Names/invited_names.txt", mode="r", encoding="utf-8") as f:
     names = f.read().splitlines()
+    names.remove("")
 
 
 with open("./Input/Letters/starting_letter.txt", mode="r", encoding="utf-8") as f:

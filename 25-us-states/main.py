@@ -1,5 +1,4 @@
 import turtle
-from numpy import float64
 import pandas
 
 

@@ -37,7 +37,6 @@ def compare(usr_score, comp_score):
 
 
 def play_game():
-
     print(logo)
 
     game_over = False

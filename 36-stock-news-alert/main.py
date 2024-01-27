@@ -23,14 +23,14 @@ def fetch_stock_close_daily_diff() -> dict:
         "symbol": STOCK,
         "outputsize": "compact",
         "datatype": "json",
-        "apikey": AV_API_KEY
+        "apikey": AV_API_KEY,
     }
-    
+
     url = "https://www.alphavantage.co/query"
     response = requests.get(url, params=params)
     response.raise_for_status()
     return response.json()
-    
+
 
 def parse_stock_data(stock_info: dict) -> tuple[bool, float, str]:
     yesterday = str(date.today() - timedelta(days=1))
@@ -45,27 +45,27 @@ def parse_stock_data(stock_info: dict) -> tuple[bool, float, str]:
     abs_diff = abs(yesterday_close - previous_close)
     diff_percent = (abs_diff / yesterday_close) * 100
     return abs_diff >= yesterday_close * 0.05, diff_percent, icon
- 
+
 
 def fetch_news() -> list:
     params = {
         "qInTitle": COMPANY_NAME,
         "from": str(date.today() - timedelta(days=1)),
         "sortBy": "popularity",
-        "apiKey": NEWS_API_KEY
+        "apiKey": NEWS_API_KEY,
     }
     url = "https://newsapi.org/v2/everything"
     response = requests.get(url, params=params)
     response.raise_for_status()
     return response.json()["articles"][:3]
-    
+
 
 def parse_news(news: list) -> list[dict]:
     processed_news = []
     for article in news:
         processed_article = {
             "title": article["title"],
-            "description": article["description"]
+            "description": article["description"],
         }
         processed_news.append(processed_article)
     return processed_news
@@ -76,8 +76,8 @@ def notify(info_to_send: list[dict], percent_diff: float, icon: str) -> None:
     for article in info_to_send:
         message = client.messages.create(
             body=f"{COMPANY_NAME}: {icon} {int(percent_diff)}%\n"
-                 f"Headline: {article["title"]}.\n"
-                 f"Brief: {article["description"]}.",
+            f"Headline: {article["title"]}.\n"
+            f"Brief: {article["description"]}.",
             from_=TWILIO_PHONE_NUMBER,
             to=PHONE_NUMBER,
         )

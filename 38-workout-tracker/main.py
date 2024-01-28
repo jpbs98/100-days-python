@@ -61,8 +61,10 @@ def update_gsheet(data: list[dict]) -> None:
                 "calories": exc["calories"],
             }
         }
-        headers = {"Authorization": f"Bearer {SHEETY_TOKEN}",
-                   "Content-Type": "application/json"}
+        headers = {
+            "Authorization": f"Bearer {SHEETY_TOKEN}",
+            "Content-Type": "application/json",
+        }
         response = requests.post(url=url, json=workout, headers=headers)
         print(response.text)
 
